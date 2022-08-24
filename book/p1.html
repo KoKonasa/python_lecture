@@ -1,0 +1,267 @@
+<!DOCTYPE HTML>
+<html lang="ja" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>環境構築 - python_lecture</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">概要</a></li><li class="chapter-item expanded "><a href="p1.html" class="active"><strong aria-hidden="true">1.</strong> 環境構築</a></li><li class="chapter-item expanded "><a href="p2.html"><strong aria-hidden="true">2.</strong> Python</a></li><li class="chapter-item expanded "><a href="p3.html"><strong aria-hidden="true">3.</strong> ウェブスクレイピング</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">python_lecture</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="環境構築"><a class="header" href="#環境構築">環境構築</a></h1>
+<p>Pythonの環境構築を行う。また、プログラムがどのようなものかについても説明する。</p>
+<h1 id="1プログラミングの仕組み"><a class="header" href="#1プログラミングの仕組み">1.プログラミングの仕組み</a></h1>
+<p>アプリやOSはプログラムでできている。プログラムとはCPUに対する計算や処理の手順のことである。プログラムは膨大な数の命令から出来ており、CPUはそれらの命令を1秒間に数億回もの速度で実行している。</p>
+<p>しかし、CPUが直接理解できる言語は決められており、日本語や英語ではなく「機械語」という。機械語は2進法の命令で出来ているが、人間がそれを読むのは難しい。</p>
+<p>そのため、人間が読むことができるプログラミング言語で書かれた命令を機械語に自動翻訳させている。この自動翻訳することを「コンパイル」という。 コンパイルしてくれるアプリのことを「コンパイラ」といい、翻訳前のプログラムのことを「ソースコード」という。プログラミング言語によって長所や短所が異なり、処理内容に応じて使い分けされている。</p>
+<div style="text-align: center;">
+プログラミング言語の例
+</div>
+<div class="table-wrapper"><table><thead><tr><th>言語</th><th>説明</th></tr></thead><tbody>
+<tr><td>アセンブリ言語</td><td>機械語の命令を最低限人間が読める程度に書き換えた言語</td></tr>
+<tr><td>C言語</td><td>アセンブリ言語に近い側面も持ち、様々な言語に影響を与えた</td></tr>
+<tr><td>C++</td><td>C言語にオブジェクト指向を取り込むなどして、C言語を拡張した言語</td></tr>
+<tr><td>JavaScript</td><td>Webサイト制作で使われる言語</td></tr>
+<tr><td>Python</td><td>書きやすく、読みやすいコードを目指して作られた言語</td></tr>
+</tbody></table>
+</div>
+<h1 id="2pythonとは何か"><a class="header" href="#2pythonとは何か">2.Pythonとは何か</a></h1>
+<p>今回扱うPythonは1991年にオランダ人のグイド・ヴァン・ロッサム氏によって開発された。<br />
+Pythonの良さとして、少ないコードでシンプルに記述できることが挙げられる。Pythonは便利なライブラリが豊富であり、機械学習やWebアプリケーションなど様々な場面で使われる。</p>
+<p>しかし、Pythonは、プログラムの命令を1つずつ機械語に翻訳しながら実行するインタプリタ型言語である。それは翻訳を介しながら会話をするようなものであり、処理速度が遅いが、ソースコードをすぐに実行できる利点もある。インタプリタ型言語にはPythonの他にRubyやJavaScriotなどがある。</p>
+<p>対して、C言語やJavaなどは、コンパイル型言語はソースコードをいったんすべて機械語に翻訳してから実行するコンパイル型言語である。それはすでにすでに翻訳された外国語の本を読むようなものであり、実行速度が速いが、デバックがしにくい欠点もある。</p>
+<h1 id="3visual-studio-codeとpythonのインストール"><a class="header" href="#3visual-studio-codeとpythonのインストール">3.Visual Studio CodeとPythonのインストール</a></h1>
+<p>Pythonの実行環境としてこのサイトではVisual Studio Codeを用いる。また、WindowsのPCを用いることを想定する。以下の項目を行ってほしい。</p>
+<ol>
+<li><a href="https://dianxnao.com/python3%e3%82%92%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e3%81%97%e3%81%a6%e4%bd%bf%e3%81%86%e3%81%be%e3%81%a7%ef%bc%88windows%e7%b7%a8%ef%bc%89/">Python：Python3をインストールして使うまで（Windows編）</a>を見ながらPythonをインストール
+<ul>
+<li>ウイルスチェックはやり方がわからなければしなくてもよい</li>
+<li>本記事執筆時点ではPython3.10.6の「Download Windows installer (64-bit)」を選択してインストール</li>
+</ul>
+</li>
+<li><a href="https://dianxnao.com/visual-studio-code%E3%81%A7python%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%82%92%E5%A7%8B%E3%82%81%E3%82%8B%EF%BC%88windows%E7%B7%A8%EF%BC%89/">Visual Studio CodeでPythonプログラミングを始める（Windows編）</a>を見ながらVisual Studio Codeをインストール
+<ul>
+<li>「マウスホイールでフォントの拡大縮小が出来るように設定する」の項目は行わなくてもよい</li>
+<li>「コマンドプロンプトからPythonを実行する」の項目を行った時に、以下をコピペしてEnterを押すことを追加で行ってほしい</li>
+</ul>
+<pre><code class="language-sh">pip3 install beautifulsoup4 requests openpyxl chromedriver-binary selenium
+</code></pre>
+</li>
+</ol>
+<h1 id="4atcoderの登録"><a class="header" href="#4atcoderの登録">4.AtCoderの登録</a></h1>
+<p>AtCoderは競技プログラミングのサイトである。AtCoderの簡単な問題は新しいプログラミング言語の基本を習得することに適しており、このサイトでも用いる。</p>
+<ol>
+<li><a href="https://atcoder.jp/register">AtCoder の Register ページ</a> から新規登録
+<ul>
+<li>ユーサー名は原則変更できないため注意</li>
+<li>ユーザー名はハンドルネームでよい</li>
+</ul>
+</li>
+<li>AtCoder 上の問題一覧を見れるサイト、<a href="https://kenkoooo.com/atcoder/#/table/">AtCoder Problems</a>をブックマーク</li>
+</ol>
+<h1 id="5インストールしたライブラリをvisual-studio-codeに登録"><a class="header" href="#5インストールしたライブラリをvisual-studio-codeに登録">5.インストールしたライブラリをVisual Studio Codeに登録</a></h1>
+<p><a href="https://startlab.jp/learning-python/vscode-settings/">Visual Studio Codeでライブラリやモジュールが could not be resolved になる時の対処法</a>に書いてあることを行う。<code>import django</code>の代わりに<code>import beautifulsoup4 </code>を、<code>print(django.__file__)</code>の代わりに<code>print(beautifulsoup4.__file__)</code>を入力する。</p>
+<h1 id="6補足コマンド"><a class="header" href="#6補足コマンド">6.(補足)コマンド</a></h1>
+<p>普段PCを使う場合は、マウスでボタンをクリックするなどグラフィカルに操作する。<a href="https://www.modis.co.jp/candidate/insight/column_28">しかし、コマンドプロンプトなどを用いてコマンドでPCを操作することも可能である。</a>慣れれば、ディレクトリの作成などコマンドのほうが速く行える操作もいい多い。ここではコマンドプロンプトの基本的なコマンドの一部を載せておく。</p>
+<div class="table-wrapper"><table><thead><tr><th>コマンド名</th><th>コマンド名の由来</th><th>機能</th><th>使い方の例</th></tr></thead><tbody>
+<tr><td>cd</td><td>change directory</td><td>カレントディレクトリの変更</td><td><code>cd ../www/html</code></td></tr>
+<tr><td>mkdir</td><td>make directory</td><td>ディレクトリを新しく作る</td><td><code>mkdir dir2</code></td></tr>
+<tr><td>rmdir</td><td>remove directory</td><td>ディレクトリの削除</td><td><code>rmdir dir2</code></td></tr>
+<tr><td>del</td><td>delete</td><td>ファイルの削除</td><td><code>del a.txt</code></td></tr>
+<tr><td>ren</td><td>rename</td><td>ファイル名の変更</td><td><code>ren a.txt b.txt</code></td></tr>
+</tbody></table>
+</div>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="p2.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="p2.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+        <script type="text/javascript">
+            window.playground_line_numbers = true;
+        </script>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+        <script src="ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>

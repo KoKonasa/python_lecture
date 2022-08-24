@@ -1,0 +1,436 @@
+<!DOCTYPE HTML>
+<html lang="ja" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Python - python_lecture</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">概要</a></li><li class="chapter-item expanded "><a href="p1.html"><strong aria-hidden="true">1.</strong> 環境構築</a></li><li class="chapter-item expanded "><a href="p2.html" class="active"><strong aria-hidden="true">2.</strong> Python</a></li><li class="chapter-item expanded "><a href="p3.html"><strong aria-hidden="true">3.</strong> ウェブスクレイピング</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">python_lecture</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="python"><a class="header" href="#python">Python</a></h1>
+<p>以下のサイトを用いる。</p>
+<ul>
+<li><a href="https://qiita.com/AI_Academy/items/b97b2178b4d10abe0adb">【初心者向け】無料でPythonの基本文法を5時間で学ぼう！</a></li>
+<li><a href="https://qiita.com/KoyanagiHitoshi/items/3286fbc65d56dd67737c">AtCoderで始めるPython入門</a></li>
+<li><a href="https://qiita.com/jamjamjam/items/e066b8c7bc85487c0785">初心者向けAtcoder標準入力セット(Python)</a></li>
+<li><a href="https://qiita.com/KoyanagiHitoshi/items/32dc42d8c5ee75339e54">AtCoderの問題を分類しました</a></li>
+<li><a href="https://www.tech-teacher.jp/blog/python-file/">ファイル操作をマスターしよう！Pythonでの読み込み・書き込み方法を徹底解説！</a></li>
+<li><a href="https://note.nkmk.me/python-openpyxl-usage/">PythonでExcelファイル（xlsx）を読み書きするopenpyxlの使い方
+</a></li>
+</ul>
+<p>以下補足</p>
+<h1 id="1四則演算"><a class="header" href="#1四則演算">1.四則演算</a></h1>
+<p>電卓のように、整数、小数、複素数の四則計算ができる。</p>
+<h2 id="11四則演算子"><a class="header" href="#11四則演算子">1.1.四則演算子</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>演算子</th><th>機能</th><th>実際の使い方</th></tr></thead><tbody>
+<tr><td>+</td><td>加算</td><td>print(1 + 2)</td></tr>
+<tr><td>-</td><td>減算</td><td>print(2 - 1)</td></tr>
+<tr><td>*</td><td>乗算</td><td>print(2 * 3)</td></tr>
+<tr><td>**</td><td>累乗</td><td>print(6 ** 10)</td></tr>
+<tr><td>/</td><td>除算</td><td>print(2 / 3)</td></tr>
+<tr><td>//</td><td>除算の商 (切り捨て)</td><td>print(31 // 7)</td></tr>
+<tr><td>%</td><td>除算の余り</td><td>print(31 % 7)</td></tr>
+</tbody></table>
+</div>
+<pre><code class="language-py">print(1 + 2)    # 3
+print(2 - 1)    # 1
+print(2 * 3)    # 6
+print((3 + 4j) * (2 + 3j)) # -6+7j  Pythonでは複素数も可能
+print(6 ** 10)  # 60466176
+print(6 / 3)    #  2.0　小数であることに注意
+print(6 // 3)   # 2
+print(31 // 7)  # 4 (31 = 7*4+3)
+print(31 % 7)   # 3
+</code></pre>
+<h2 id="12演算子の優先順位"><a class="header" href="#12演算子の優先順位">1.2.演算子の優先順位</a></h2>
+<p>演算子にも優先順位があるが、数学とほぼ同様なので覚える必要は無い。</p>
+<div class="table-wrapper"><table><thead><tr><th>Tier</th><th>演算子</th></tr></thead><tbody>
+<tr><td>1</td><td>()</td></tr>
+<tr><td>2</td><td>**</td></tr>
+<tr><td>3</td><td>*, /, //, %</td></tr>
+<tr><td>4</td><td>+, -</td></tr>
+<tr><td>5</td><td>&lt;, &lt;=, &gt;, &gt;=, ==, !=</td></tr>
+<tr><td>6</td><td>not</td></tr>
+<tr><td>7</td><td>and</td></tr>
+<tr><td>8</td><td>or</td></tr>
+</tbody></table>
+</div>
+<h1 id="2文字列"><a class="header" href="#2文字列">2.文字列</a></h1>
+<p>&quot;python&quot; のように、&quot; (ダブルクオーテーション) に囲まれた文字を<strong>文字列</strong> (<code>str</code>) という。<br />
+ダブルクオーテーションで囲んでも、シングルクオーテーションで囲んでもよいが、ダブルクオテーションのほうがよく見かける。 </p>
+<pre><code class="language-py">print(&quot;Python&quot;)  # Python
+# 同じ結果となる
+print('Python')  # Pyhon
+
+#数値や式でもクオテーションで囲むと文字列になる
+print(2)    # 2
+print(&quot;2&quot;)  # 2 見た目は同じだが文字列と数値は異なる
+
+print(1 + 2)   # 3
+print(&quot;1 + 2&quot;) # 1 + 2
+</code></pre>
+<h1 id="3変数"><a class="header" href="#3変数">3.変数</a></h1>
+<p>数学と同じように、変数を使うことが出来る。変数には数値だけでなく文字列も代入できる。変数名の大文字と小文字は区別される。また、変数名の細かい付け方のルールは人や環境によって違う。例えば、is_usedと書く人もいれば、isUsedと書く人もいる。言語が推奨している書き方を調べたり、共同開発しているならチームの書き方を統一した方がよい。</p>
+<pre><code class="language-py">x_int = 123
+print(x)  # 123
+x_str = &quot;hello&quot;
+print(x)  # hello
+</code></pre>
+<p>左辺の変数に右辺の値を変数に入れることを代入という。数学の<code>=</code>と違い、左辺と右辺は対等ではないので<code>123 = x_int</code>のような書き方はできない。</p>
+<p>また、以下のように変数を使うことでプログラムを見やすく、簡潔に書くことが出来る。</p>
+<pre><code class="language-py"># 醜いコード
+print(10 + 1)
+print((10 + 1) - 2)
+print(((10 + 1) - 2)**2)
+
+# 推奨コード
+a = 10 + 1
+b = a - 2
+c = b**2
+print(a)
+print(b)
+print(c)
+また次のように変数に代入されている値に計算をして、元の変数に再び代入するような処理もよく行われる。
+</code></pre>
+<pre><code class="language-py">x = 2
+pritnt(x)  # 2
+x = x +3
+print(x)   # 5
+</code></pre>
+<p>Pythonにおける<code>=</code>は左辺と右辺が等しいという意味ではなく、右辺の値を左辺の変数に代入することを意味する。そのため、3行目では<code>x</code>に3を足した数が再び<code>x</code>に代入される。このような処理は次のようにも書ける。</p>
+<pre><code class="language-py">x = 2
+print(x)  # 2
+x += 3
+print(x)  # 5
+</code></pre>
+<p>このことは他の演算子にも成り立つ。</p>
+<pre><code class="language-py">変数 += 式        # 変数 = 変数 + 式
+変数 -= 式        # 変数 = 変数 - 式
+変数 *= 式        # 変数 = 変数 * 式
+変数 /= 式        # 変数 = 変数 / 式
+変数 //= 式       # 変数 = 変数 // 式
+変数 %= 式        # 変数 = 変数 % 式
+変数 **= 式       # 変数 = 変数 ** 式
+</code></pre>
+<h1 id="4ac-してみよう"><a class="header" href="#4ac-してみよう">4.<a href="https://atcoder.jp/contests/abs/tasks/practice_1">AC してみよう</a></a></h1>
+<p>コピペ AC してみましょう。</p>
+<h2 id="41-f-文字列-f-strings"><a class="header" href="#41-f-文字列-f-strings">4.1. F 文字列 (F-Strings)</a></h2>
+<p><code>f&quot;{変数}&quot;</code> と書くと、変数の値が代入された状態の文字列になる。</p>
+<pre><code class="language-py">print(&quot;2 * 3:&quot;, 2 * 3)  # 2 * 3: 6
+print(f&quot;2 * 3: {2 * 3}&quot;)  # 2 * 3: 6
+#少し複雑になるが、次の方法も可能
+print(&quot;2 * 3: {}&quot;.format(2 * 3))  # 2 * 3: 6
+</code></pre>
+<h3 id="42出力の書式指定"><a class="header" href="#42出力の書式指定">4.2.出力の書式指定</a></h3>
+<p>詳しくは、<a href="https://gammasoft.jp/blog/python-string-format/">Python の文字列フォーマット（format メソッドの使い方）</a> を参照。</p>
+<pre><code class="language-py">print(&quot;pi = {:.4}&quot;.format(3.141592653589793238462643383279))  # 3.142
+</code></pre>
+<h2 id="43エスケープ"><a class="header" href="#43エスケープ">4.3.エスケープ</a></h2>
+<p>シングルクオーテーションを出力する際は、ダブルクォーテーションで囲み、
+ダブルクオーテーションを出力する際は、シングルクォーテーションで囲むと、スマートに書ける。</p>
+<pre><code class="language-py">print(&quot;シングルクオーテーションは ' です&quot;)  # シングルクオーテーションは ' です
+print('ダブルクオーテーションは &quot; です')  # ダブルクオーテーションは &quot; です
+
+# もちろん、以下のように出力することも可能
+print('シングルクオーテーションは \' です')  # シングルクオーテーションは ' です
+print(&quot;ダブルクオーテーションは \&quot; です&quot;)  # ダブルクオーテーションは &quot; です
+</code></pre>
+<pre><code class="language-py">print(&quot;バックスラッシュは \\ です&quot;)  # バックスラッシュは \ です
+print(&quot;改行は\nです&quot;)
+# 改行は
+# です
+</code></pre>
+<h2 id="44raw-文字列-raw-strings"><a class="header" href="#44raw-文字列-raw-strings">4.4.Raw 文字列 (Raw Strings)</a></h2>
+<p><strong>制御文字</strong> (\, \n といった特殊な役割を持つ文字のこと。) をそのまま出力。</p>
+<pre><code class="language-py">print(&quot;a\\b\nA\\B&quot;)
+# a\b
+# A\B
+print(r&quot;a\\b\nA\\B&quot;) # a\\b\nA\\B
+</code></pre>
+<h2 id="45sep-end-に値を入れる"><a class="header" href="#45sep-end-に値を入れる">4.5.sep, end に値を入れる</a></h2>
+<pre><code class="language-py"># default は sep=&quot; &quot;
+print(1, 2, 3, sep=&quot; &lt; &quot;)  # 1 &lt; 2 &lt; 3
+# default は end=&quot;\n&quot; (\n は改行を意味する制御文字)
+print(&quot;No line break.&quot;, end=&quot;&quot;)  # No line break. (改行なし)#
+</code></pre>
+<pre><code class="language-py">a = int(input())
+b, c = map(int, input().split())
+s = input()
+print(a + b + c, s)
+</code></pre>
+<h1 id="5set型集合"><a class="header" href="#5set型集合">5.set型:集合</a></h1>
+<p>リストと違い、要素に重複が無く、順番も決まっていない。<code>len</code>や<code>add</code>などリストと多くの同様の関数が使える。</p>
+<pre><code class="language-py">d = {1, 2, 3, 5, 6, 9}
+even = {2, 6}
+print(d - even)  # {1, 3, 5, 9} 　差集合
+print(d | even)  # {0, 1, 2, 3, 4, 5, 6, 8, 9}　和集合
+print(d &amp; even)  # {2, 6}　積集合
+print(d ^ even)  # {0, 1, 3, 4, 5, 8, 9}　対称差集合
+</code></pre>
+<h1 id="6tupple型タプル"><a class="header" href="#6tupple型タプル">6.tupple型:タプル</a></h1>
+<p><a href="https://www.lifewithpython.com/2017/12/python-tuple-list-difference.html">Python のタプルとリストの違い、タプルの使いどころ</a></p>
+<h1 id="7データ構造"><a class="header" href="#7データ構造">7.データ構造</a></h1>
+<p>データ構造とは、データの集まりをコンピュータプログラムで扱いやすいように、一定の形式で格納したものである。前述のリストや辞書などもデータ構造の1種である。また、よく使われるデータ構造として「スタック」、「キュー」、「優先度付きキュー」、「木構造」などがある。</p>
+<ul>
+<li><a href="https://qiita.com/drken/items/6a95b57d2e374a3d3292">スタックとキューを極める！ 〜 考え方と使い所を特集 〜</a></li>
+<li><a href="https://qiita.com/ell/items/fe52a9eb9499b7060ed6">【Python】優先度付きキューの使い方【heapq】【ABC141 D】</a></li>
+<li><a href="https://www.ai-lab.app/1161/">「グラフ理論」における必須概念【18選】</a></li>
+<li><a href="https://qiita.com/maskot1977/items/e1819b7a1053eb9f7d61">グラフ理論の基礎</a></li>
+</ul>
+<h1 id="8enumerate"><a class="header" href="#8enumerate">8.enumerate</a></h1>
+<p>リストの要素とともにインデックスも取り出せる。</p>
+<pre><code class="language-py">nums = [3, 1, 4, 1, 5]
+for i in range(len(nums)):
+    print(f&quot;nums[{i}] = {nums[i]}&quot;)
+    # nums[0] = 3
+    # nums[1] = 1
+    # nums[2] = 4
+    # nums[3] = 1
+    # nums[4] = 5
+
+# 組み込み関数 enumerate を使ってもよい
+nums = [3, 1, 4, 1, 5]
+for i, num in enumerate(nums):
+    print(f&quot;nums[{i}] = {num}&quot;)
+    # nums[0] = 3
+    # nums[1] = 1
+    # nums[2] = 4
+    # nums[3] = 1
+    # nums[4] = 5
+</code></pre>
+<h1 id="9zip"><a class="header" href="#9zip">9.zip</a></h1>
+<p>複数のリストの要素を同時に取り出せる。ループ回数は最も要素数の少ないリストに依存する。</p>
+<pre><code class="language-py">names = ['Alice', 'Bob', 'Charlie']
+ages = [24, 50, 18]
+
+for name, age in zip(names, ages):
+    print(name, age)
+# Alice 24
+# Bob 50
+# Charlie 18
+</code></pre>
+<h1 id="10lambdaラムダ関数"><a class="header" href="#10lambdaラムダ関数">10.lambda(ラムダ)関数</a></h1>
+<pre><code class="language-py">def calc_rect_area(height, width):
+    return height * width
+
+print(calc_rect_area(20, 30))  # 600
+
+# calc_rect_area と等価な関数
+calc_rect_area3 = lambda h, w: h * w
+print(calc_rect_area3(20, 30))  # 600
+</code></pre>
+<h1 id="11再帰関数"><a class="header" href="#11再帰関数">11.再帰関数</a></h1>
+<pre><code class="language-py">def pow2(n):
+  ans = 1
+  for i in range(n):
+    ans *= 2
+    return ans
+
+def fact(n):
+  ans = 1
+  for i in range(1, n+1):
+    ans *= i
+    return ans
+</code></pre>
+<h1 id="13その他のpythonの機能一部"><a class="header" href="#13その他のpythonの機能一部">13.その他のPythonの機能(一部)</a></h1>
+<h2 id="131エラーと例外"><a class="header" href="#131エラーと例外">13.1.エラーと例外</a></h2>
+<p>ファイルを開く、ネットからデータを取ってくるなどの処理は必ずしも成功するとは限らない。パーミッション拒否されたり、サーバーと繋がらなかったり、そのようなときにバグを防げる。</p>
+<h2 id="132数値計算ライブラリ"><a class="header" href="#132数値計算ライブラリ">13.2.数値計算ライブラリ</a></h2>
+<p>データ解析などで使う</p>
+<h2 id="133正規表現"><a class="header" href="#133正規表現">13.3.<a href="https://algo-method.com/courses/6">正規表現</a></a></h2>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="p1.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="p3.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="p1.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="p3.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+        <script type="text/javascript">
+            window.playground_line_numbers = true;
+        </script>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+        <script src="ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>
