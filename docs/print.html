@@ -279,9 +279,11 @@ Pythonの良さとして、少ないコードでシンプルに記述できる�
 <li><a href="https://qiita.com/KoyanagiHitoshi/items/3286fbc65d56dd67737c">AtCoderで始めるPython入門</a></li>
 <li><a href="https://qiita.com/jamjamjam/items/e066b8c7bc85487c0785">初心者向けAtcoder標準入力セット(Python)</a></li>
 <li><a href="https://qiita.com/KoyanagiHitoshi/items/32dc42d8c5ee75339e54">AtCoderの問題を分類しました</a></li>
+<li><a href="https://pg-chain.com/python-csv-read">【Python】テキストファイル・CSVの読み込み</a></li>
 <li><a href="https://www.tech-teacher.jp/blog/python-file/">ファイル操作をマスターしよう！Pythonでの読み込み・書き込み方法を徹底解説！</a></li>
 <li><a href="https://note.nkmk.me/python-openpyxl-usage/">PythonでExcelファイル（xlsx）を読み書きするopenpyxlの使い方
 </a></li>
+<li><a href="https://note.nkmk.me/python-csv-reader-writer/">PythonでCSVファイルを読み込み・書き込み（入力・出力）</a></li>
 </ul>
 <p>以下補足</p>
 <h1 id="1四則演算"><a class="header" href="#1四則演算">1.四則演算</a></h1>
@@ -423,11 +425,6 @@ print(1, 2, 3, sep=&quot; &lt; &quot;)  # 1 &lt; 2 &lt; 3
 # default は end=&quot;\n&quot; (\n は改行を意味する制御文字)
 print(&quot;No line break.&quot;, end=&quot;&quot;)  # No line break. (改行なし)#
 </code></pre>
-<pre><code class="language-py">a = int(input())
-b, c = map(int, input().split())
-s = input()
-print(a + b + c, s)
-</code></pre>
 <h1 id="5set型集合"><a class="header" href="#5set型集合">5.set型:集合</a></h1>
 <p>リストと違い、要素に重複が無く、順番も決まっていない。<code>len</code>や<code>add</code>などリストと多くの同様の関数が使える。</p>
 <pre><code class="language-py">d = {1, 2, 3, 5, 6, 9}
@@ -511,10 +508,28 @@ def fact(n):
 <h2 id="133正規表現"><a class="header" href="#133正規表現">13.3.<a href="https://algo-method.com/courses/6">正規表現</a></a></h2>
 <div style="break-before: page; page-break-before: always;"></div><p>プログラミングを学んだなら、<a href="https://atcoder.jp/contests/abs">AtCoder Beginners Selection</a>が難なく解ける程度の実装力は身につけておきたいですね。</p>
 <h1 id="ウェブスクレイピング"><a class="header" href="#ウェブスクレイピング">ウェブスクレイピング</a></h1>
-<p>以下のサイトを用いる。</p>
+<p>以下のサイトを用いる。<br />
+HTML,CSS</p>
 <ul>
 <li><a href="https://saruwakakun.com/html-css/basic">サルワカ-HTML&amp;CSS入門Webデザインをイチから学ぼう</a></li>
-<li><a href="https://ai-inter1.com/beautifulsoup_1/">図解！Python BeautifulSoupの使い方を徹底解説！(select、find、find_all、インストール、スクレイピングなど)</a></li>
+<li><a href="https://umano-ie.com/scraping03/">WebスクレイピングのためのHTML・CSS入門</a></li>
+</ul>
+<p>スクレイピング全般</p>
+<ul>
+<li><a href="https://aiacademy.jp/texts/show/?id=50">Webスクレイピング入門</a></li>
+</ul>
+<p>BeautifulSoup</p>
+<ul>
+<li><a href="https://ai-inter1.com/beautifulsoup_1/">図解！Python BeautifulSoupの使い方を徹底解説！(select、find、find_all、インストール、スクレイピングなど)</a>
+XPath</li>
+<li><a href="https://www.octoparse.jp/blog/xpath-introduction/#">【図解】XPathとは？基本概念から書き方までわかりやすく解説！</a> </li>
+</ul>
+<p>XPathについて</p>
+<ul>
+<li><a href="https://ai-inter1.com/xpath/">図解！XPathでスクレイピングを極めろ！(Python、containsでの属性・テキストの取得など)</a></li>
+</ul>
+<p>Selenium</p>
+<ul>
 <li><a href="https://qiita.com/Chanmoro/items/9a3c86bb465c1cce738a">10分で理解する Selenium</a></li>
 <li><a href="https://ai-inter1.com/python-selenium/">図解！PythonでSeleniumを使ったスクレイピングを徹底解説！(インストール・使い方・Chrome)</a></li>
 </ul>
